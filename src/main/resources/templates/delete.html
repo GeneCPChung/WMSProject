@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Item</title>
+    <link rel="stylesheet" href="../css/layout.css"></link>
+    <link rel="stylesheet" href="../css/style.css"></link>
+</head>
+
+<body>
+<div class="container">
+
+    <header class="header">
+        <img class="main__logo" src="../images/wolf.png" />
+        <div class="title">
+            <h3>Be careful on this page!</h3>
+        </div>
+    </header>
+
+    <div class="delete__item__list">
+        <div class="item-list" th:each="item: ${itemsModel}">
+            <div th:id="'item-'+ ${item.id}">
+                <a th:href="@{'/item/'+${item.id}}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
+                <button type="submit" class="deleteItem" th:attr="data-id=${item.id}" for="id" name="id">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav__bar">
+        <a href="add">
+            <button class="add_item_button">Add Item</button>
+        </a>
+        <a href="/">
+            <button class="home_button">Home</button>
+        </a>
+        <a href="find">
+            <button class="search_button">Search</button>
+        </a>
+    </nav>
+
+    <footer class="footer">
+    </footer>
+</div>
+
+</body>
+<script src="../js/deleteItem.js"></script>
+
+</html>

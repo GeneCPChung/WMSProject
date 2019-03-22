@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>IMS</title>
+    <link rel="stylesheet" href="../css/layout.css"></link>
+    <link rel="stylesheet" href="../css/style.css"></link>
+</head>
+
+<body>
+
+<div class="container" >
+
+    <header class="header">
+        <img class="main__logo" src="../images/wolf.png" />
+        <div class="title">
+            <h3>Edit Item!</h3>
+        </div>
+    </header>
+
+    <div class="edit__item__list" th:each="item: ${editModel}">
+        <form method="PUT" onsubmit="myButton.disabled = true; return true;">
+
+            <label for="barcode" th:text="${'Barcode: ' + item.Barcode}"></label>
+            <br/>
+            <input th:value="${item.Barcode}" type="text" name="barcode" maxlength="200" id="barcode" autofocus="true" required="true"
+            />
+            <br/>
+            <br/>
+
+            <label for="quantity" th:text="${'Quantity: ' + item.Quantity}"></label>
+            <br/>
+            <input th:value="${item.Quantity}" type="text" name="quantity" maxlength="200" id="quantity" required="true" />
+            <br/>
+            <br/>
+
+            <label for="expirationDateString" th:text="${'Expiration Date: ' + item.ExpirationDate}"></label>
+            <br/>
+            <input th:value="${item.ExpirationDate}" type="date" name="expirationDateString" id="expirationDateString" required="true"
+            />
+            <br/>
+            <br/>
+
+            <label for="itemName" th:text="${'Name: ' + item.Name}"></label>
+            <br/>
+            <input th:value="${item.Name}" type="text" name="itemName" id="itemName" required="true" />
+            <br/>
+            <br/>
+
+            <label for="unit" th:text="${'Unit: ' + item.Unit}"></label>
+            <br/>
+            <input th:value="${item.Unit}" type="text" name="unit" id="unit" required="true" />
+            <br/>
+            <br/>
+
+            <label for="location" th:text="${'Location: ' + item.Location}"></label>
+            <br/>
+            <input th:value="${item.Location}" type="text" name="location" id="location" required="true" />
+            <br/>
+            <br/>
+
+            <label for="price" th:text="${'Price: ' + item.Price}"></label>
+            <br/>
+            <input th:value="${item.Price}" type="text" name="price" id="price" required="true" />
+            <br/>
+            <br/>
+
+            <label for="description" th:text="${'Description: ' + item.Description}"></label>
+            <br/>
+            <input th:value="${item.Description}" type="text" name="description" id="description" required="true" />
+
+            <p>
+                <input type="submit" id="addItem" name="myButton" value="Edit Item" />
+            </p>
+            <br/>
+
+            <div th:attr="data-id=${item.id}" id="itemId" name="id">
+                <a th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
+            </div>
+        </form>
+    </div>
+
+    <nav class="nav__bar">
+        <a href="/">
+            <button class="home_button">Home</button>
+        </a>
+        <a href="add">
+            <button class="add_item_button">Add</button>
+        </a>
+        <a href="delete">
+            <button class="delete_button">Delete</button>
+        </a>
+        <a href="find">
+            <button class="search_button">Search</button>
+        </a>
+    </nav>
+
+    <footer class="footer">
+    </footer>
+
+</div>
+
+</body>
+<script src="../js/editItem.js"></script>
+
+</html>

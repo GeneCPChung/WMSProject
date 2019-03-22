@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IMS</title>
+    <link rel="stylesheet" href="./css/layout.css"></link>
+    <link rel="stylesheet" href="./css/style.css"></link>
+</head>
+
+<body>
+<div class="container">
+
+    <header class="header">
+        <img class="main__logo" src="./images/wolf.png" />
+        <div class="title">
+            <h3>These Items are going bad.</h3>
+            <p>Items next to Red squares are Expired, items next to Yellow squares are going to expire and items in green
+                are soon to expire.</p>
+        </div>
+    </header>
+
+    <div class="item__list">
+        <div class="expire__items" th:each="item: ${itemsModel}">
+            <ul class="item-Expired" th:if="${item.isExpired()}">
+                <li>
+                    <a th:href="@{'/item/'+${item.id}}" th:text="${item.Name + ' Date: ' + item.ExpirationDate + ' Location: ' + item.Location}"></a>
+                </li>
+            </ul>
+            <ul class="item-Expiring" th:if="${item.isExpiringTomorrow()}">
+                <li>
+                    <a th:href="@{'/item/'+${item.id}}" th:text="${item.Name + ' Date: ' + item.ExpirationDate + ' Location: ' + item.Location}"></a>
+                </li>
+            </ul>
+            <ul class="item-Soon" th:if="${item.isSoonToExpire()}">
+                <li>
+                    <a th:href="@{'/item/'+${item.id}}" th:text="${item.Name + ' Date: ' + item.ExpirationDate + ' Location: ' + item.Location}"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <nav class="nav__bar">
+        <a href="item/add">
+            <button class="add_item_button">Add</button>
+        </a>
+        <a href="item/delete">
+            <button class="delete_button">Delete</button>
+        </a>
+        <a href="item/find">
+            <button class="search_button">Search</button>
+        </a>
+    </nav>
+
+    <footer class="footer">
+    </footer>
+
+</div>
+
+</body>
+
+</html>

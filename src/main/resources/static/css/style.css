@@ -1,0 +1,183 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.header{
+    background-image: url('../images/header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 1px 4px 0px #020202;
+    z-index: 1;
+}
+
+.main__logo{
+    height: 100px;
+    width: 100px;
+}
+
+.nav__bar{
+}
+
+.add_item_button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.add_item_button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.add_item_button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+.search_button{
+    background-color: rgb(73, 104, 243);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.search_button{
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(73, 104, 243);
+}
+
+.search_button:hover{
+    background-color: rgb(73, 104, 243);
+    color: white;
+}
+
+.delete_button {
+    background-color: rgb(243, 97, 73);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.delete_button {
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(243, 97, 73);
+}
+
+.delete_button:hover {
+    background-color: rgb(243, 97, 73);
+    color: white;
+}
+
+.home_button{
+    background-color: rgb(189, 73, 243);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.home_button{
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(189, 73, 243);
+}
+.home_button:hover{
+    background-color: rgb(189, 73, 243);
+    color: white;
+}
+
+.item__list{
+    border: 1px solid black;
+    overflow: scroll;
+    box-shadow: inset 0px 0px 5px 0px rgb(0, 0, 0);
+
+}
+
+.add__item__list{
+    border: 1px solid black;
+    overflow: scroll;
+    box-shadow: inset 0px 0px 5px 0px rgb(0, 0, 0);
+
+}
+
+.delete__item__list{
+    border: 1px solid black;
+    overflow: scroll;
+    box-shadow: inset 0px 0px 5px 0px rgb(0, 0, 0);
+}
+
+.edit__item__list{
+    border: 1px solid black;
+    overflow: scroll;
+    box-shadow: inset 0px 0px 5px 0px rgb(0, 0, 0);
+}
+
+.expire__items{
+    margin: 1%;
+    list-style-position: inside;
+    list-style-type: square;
+}
+
+
+.item-Expired{
+    color: red;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    /* border: 1px solid black; */
+    box-shadow: inset 0px 0px 2px 0px red;
+}
+
+
+.item-Expiring{
+    color: yellow;
+    background-color: white;
+    box-shadow: inset 0px 0px 2px 0px yellow;
+    padding: 5px;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+}
+
+.item-Soon{
+    color: green;
+    background-color: white;
+    box-shadow: inset 0px 0px 2px 0px green;
+    padding: 5px;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+}

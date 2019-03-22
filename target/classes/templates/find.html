@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="../css/layout.css"></link>
+    <link rel="stylesheet" href="../css/style.css"></link>
+</head>
+
+<body>
+<div class="container">
+
+    <header class="header">
+        <img class="main__logo" src="../images/wolf.png" />
+        <div class="title">
+            <h3>Search an Item!</h3>
+        </div>
+    </header>
+
+    <div class="delete__item__list">
+        <div>
+            <form method="GET">
+                <label id="search_by" for="input">
+                    <select>
+                        <option value="0">Search Item By:</option>
+                        <option value="1">Barcode:</option>
+                        <option value="2">Quantity:</option>
+                        <option value="3">Expiration Date:</option>
+                        <option value="4">Name:</option>
+                        <option value="5">Unit:</option>
+                        <option value="6">Location:</option>
+                        <option value="7">Description:</option>
+                        <option value="8">Mercedes</option>
+                    </select>
+                </label>
+                <input type="text" name="input" maxlength="200" id="info_input" autofocus="true" required="true" />
+                <input type="submit" id="findItems" name="myButton" value="Search" />
+            </form>
+        </div>
+
+        <div class="item-list" th:each="item: ${foundItems}">
+            <div th:id="'item-'+ ${item.id}">
+                <a th:href="@{'/item/'+${item.id}}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
+                <button type="submit" class="deleteItem" th:attr="data-id=${item.id}" for="id" name="id">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav__bar">
+        <a href="add">
+            <button class="add_item_button">Add</button>
+        </a>
+        <a href="delete">
+            <button class="delete_button">Delete</button>
+        </a>
+        <a href="/">
+            <button class="home_button">Home</button>
+        </a>
+    </nav>
+
+    <footer class="footer">
+    </footer>
+</div>
+
+</body>
+<script src="../js/deleteItem.js"></script>
+<script src="../js/search.js"></script>
+
+</html>

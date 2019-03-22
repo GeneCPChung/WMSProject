@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="../css/layout.css"></link>
+    <link rel="stylesheet" href="../css/style.css"></link>
+</head>
+
+<body>
+<div class="container">
+
+    <header class="header">
+        <img class="main__logo" src="../images/wolf.png" />
+        <div class="title">
+            <h3>Please enter new Item info here.</h3>
+        </div>
+    </header>
+
+    <div class="add__item__list">
+        <form method="POST" onsubmit="myButton.disabled = true; return true;">
+
+            <label for="barcode">Barcode:</label>
+            <input type="text" name="barcode" maxlength="200" id="barcode" autofocus="true" required="true" />
+
+            <br />
+
+            <label for="quantity">Quantity:</label>
+            <input type="text" name="quantity" maxlength="200" id="quantity" required="true" />
+
+            <br />
+
+            <label for="expirationDateString">Expiration Date:</label>
+            <input type="date" name="expirationDateString" id="expirationDateString" required="true" />
+
+            <br />
+
+            <label for="itemName">Item Name:</label>
+            <input type="text" name="itemName" id="itemName" required="true" />
+
+            <br />
+
+            <label for="unit">Unit:</label>
+            <input type="text" name="unit" id="unit" required="true" />
+
+            <br />
+
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" class="location" required="true" value="" />
+            <input type="checkbox" id="location-Lock" checked/>
+
+            <br />
+
+            <label for="price">Price per Unit:</label>
+            <input type="text" name="price" id="price" required="true" />
+
+            <br />
+
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" required="true" />
+
+            <p>
+                <input type="submit" id="addItem" name="myButton" value="Add Item" />
+            </p>
+        </form>
+
+        <ul class="item-list" th:each="item: ${itemsModel}">
+            <li>
+                <a th:href="@{'/item/'+${item.id}}" th:text="${'Barcode: ' + item.Barcode + ' Quantity: ' + item.Quantity + ' Expiration Date: ' + item.ExpirationDate + ' Name: ' + item.Name + ' Unit: ' + item.Unit + ' Location: ' + item.Location + ' Price: ' + item.Price + ' Description: ' + item.Description}"></a>
+            </li>
+        </ul>
+    </div>
+
+    <nav class="nav__bar">
+        <a href="/">
+            <button class="home_button">Home</button>
+        </a>
+        <a href="delete">
+            <button class="delete_button">Delete</button>
+        </a>
+        <a href="find">
+            <button class="search_button">Search</button>
+        </a>
+    </nav>
+
+    <footer class="footer">
+    </footer>
+</div>
+
+</body>
+
+<script src="../js/addItem.js"></script>
+<script src="../js/lockChoice.js"></script>
+</html>

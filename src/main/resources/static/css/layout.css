@@ -1,0 +1,82 @@
+.container{
+    display: grid;
+    grid-template-areas: "head head "
+                         "nav  nav  "
+                         "list list "
+                         "list list "
+                         "footer footer";
+    height: 100vh;
+}
+
+.header{
+    height: 20vh;
+    grid-area: head;
+    padding: 1rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.main__logo{
+
+}
+
+.edit__item__list{
+    height: 65vh;
+    width: 75vw;
+    grid-area: list;
+    padding: 1rem;
+    justify-self: center;
+}
+
+.delete__item__list{
+    height: 65vh;
+    width: 75vw;
+    grid-area: list;
+    padding: 1rem;
+    justify-self: center;
+}
+
+.add__item__list{
+    height: 65vh;
+    width: 75vw;
+    grid-area: list;
+    padding: 1rem;
+    display: grid;
+    align-items: center;
+    align-content: start;
+    justify-items: center;
+    justify-self: center;
+}
+
+.item__list{
+    height: 65vh;
+    width: 75vw;
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    align-items: center;
+    align-content: start;
+    justify-items: center;
+    justify-self: center;
+}
+
+.nav__bar{
+    height: 10vh;
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer{
+    height: 5vh;
+    grid-area: footer;
+}
